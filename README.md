@@ -1,3 +1,3 @@
-# Pouch
+# Pouch App
 
 Jonathan Dozier-Ezell
