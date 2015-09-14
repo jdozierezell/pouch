@@ -1,0 +1,57 @@
+.cta {
+  color: $white;
+  text-align: center;
+  @media (min-width: 500px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      width: columns(6);
+      margin: 3rem auto;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.cta--splash {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14rem 0;
+  @media (min-width: 500px) {
+    text-align: left;
+    padding-top: 10%;
+    p {
+      margin-left: 0;
+    }
+  }
+}
+
+.cta__button {
+  display: inline-block;
+  background-color: $red;
+  color: $white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font: {
+    size: 1.3rem;
+    weight: bold;
+  }
+  &--pricing {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem 2.5rem;
+    @media (min-width: 770px) {
+      @include columns(9);
+      margin-bottom: 1rem;
+      padding: 0.8rem 1.5rem;
+      font: {
+        size: 1.1rem;
+        weight: normal;
+      }
+    }
+  }
+}

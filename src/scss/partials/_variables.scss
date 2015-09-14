@@ -1,0 +1,25 @@
+//Colors
+
+$red: rgb(225,42,47);
+$gray: rgb(52,73,94);
+$white: rgb(255,255,255);
+$mint: rgb(175,250,255);
+$sea: rgb(89,204,197);
+
+
+// Columns
+
+$gutter: 1.5rem !default;
+
+
+@function columns($columns, $totalColumns: 12, $gutter: $gutter) {
+    $colDiff: $columns/$totalColumns + rem;
+    $trueGutter: #{$gutter} - #{$colDiff};
+    $calc: calc(#{$columns} / #{$totalColumns} * 100% - (#{$trueGutter}));
+    @return $calc;
+  }
+
+
+@mixin columns($columns, $totalColumns: 12, $gutter: $gutter) {
+  flex: 0 0 columns($columns);
+}

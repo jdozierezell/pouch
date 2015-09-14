@@ -1,0 +1,30 @@
+{
+  "name": "pouch",
+  "version": "1.0.0",
+  "description": "A project for Bloc.io based on Blocbox",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdozierezell/pouch.git"
+  },
+  "keywords": [
+    "Kangaroos"
+  ],
+  "author": "Jonathan Dozier-Ezell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdozierezell/pouch/issues"
+  },
+  "homepage": "https://github.com/jdozierezell/pouch",
+  "devDependencies": {
+    "autoprefixer": "^6.0.2",
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "normalize.scss": "^0.1.0"
+  }
+}

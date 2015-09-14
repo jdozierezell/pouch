@@ -1,0 +1,64 @@
+.pricing {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (min-width: 770px) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+  }
+}
+
+.pricing__model {
+  @include columns(3.8);
+  text-align: center;
+  background-color: $mint;
+  margin: 3rem 0;
+  min-height: 30vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  @media (min-width: 770px) {
+    &--preferred {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.pricing__header {
+  width: 100%;
+  background-color: $gray;
+  color: $white;
+  font: {
+    weight: normal;
+    size: 1.6rem;
+  }
+  padding: 0.5rem 0;
+}
+
+.pricing__price {
+  width: 100%;
+  font: {
+    family: "ff-tisa-web-pro", sans-serif;
+    size: 3rem;
+    weight: normal;
+  }
+}
+
+.dollar {
+  font-size: 1rem;
+  position: relative;
+  top: -0.25rem;
+}
+
+.perMo {
+  font-size: 1rem;
+  position: relative;
+}
+
+.pricing__features {
+  width: 100%;
+}

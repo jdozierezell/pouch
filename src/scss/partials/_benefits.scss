@@ -1,0 +1,44 @@
+.benefits__section {
+  width: 100%;
+  &--gray {
+    background-color: $gray;
+  }
+  &--mint {
+    background-color: $mint;
+  }
+}
+
+.benefits {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  @media (min-width: 667px) {
+    display: flex;
+    padding: 5% 0;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &--reverse {
+      flex-flow: row-reverse nowrap;
+    }
+  }
+}
+
+.benefits__image {
+  width: 100%;
+  @media (min-width: 667px) {
+    @include columns(7);
+  }
+}
+
+.benefits__copy {
+  color: $gray;
+  padding: 0.5rem 0;
+  &--white {
+    color: $white;
+  }
+  @media (min-width: 667px) {
+    @include columns(5);
+  }
+}
