@@ -38,7 +38,13 @@
   &--white {
     color: $white;
   }
+  p {
+    margin: 0.2em 0;
+  }
   @media (min-width: 667px) {
     @include columns(5);
+    p {
+      margin: 1em 0;
+    }
   }
 }

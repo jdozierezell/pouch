@@ -7,14 +7,14 @@
       image: url(../../assets/kangaroosJumping.jpg);
       color: rgba($gray, 0.5);
       blend-mode: multiply;
-      position: 50% 20%;
+      position: 64% 20%;
       size: cover;
       repeat: no-repeat;
     }
-    height: 100vh;
-    min-height: 40rem;
+    min-height: 90vh;
     @media (min-width: 500px) {
-      height: 80vh;
+      background-position: 50% 20%;
+      min-height: 80vh;
     }
   }
   &--dashboard {
