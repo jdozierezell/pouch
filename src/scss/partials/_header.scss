@@ -1,5 +1,7 @@
 .header {
   width: 100%;
+  position: relative;
+  z-index: 1;
   &--home {
     background: {
       image: url(../../assets/kangaroosJumping.jpg);
@@ -13,6 +15,20 @@
     min-height: 40rem;
     @media (min-width: 500px) {
       height: 80vh;
+    }
+  }
+  &--dashboard {
+    height: 9em;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    @media (max-width: $slicknav) {
+      height: auto;
     }
   }
 }
@@ -41,6 +57,11 @@
   }
   @media (min-width: 1224px) {
     padding-left: 0;
+  }
+  @media (max-width: $slicknav) {
+    display: block;
+    margin: 0 auto;
+    min-width: 33%;
   }
 }
 
@@ -78,5 +99,167 @@
   }
   @media (min-width: 500px) {
     width: auto;
+  }
+}
+
+.nav {
+  flex-grow: 1;
+  @media (max-width: $slicknav) {
+    display: none;
+  }
+}
+
+.slicknav_menu {
+    display: none;
+    background: $gray;
+    @media (max-width: $slicknav) {
+      display: block;
+      position: relative;
+      top: -35px;
+    }
+}
+
+.slicknav_btn {
+  background: $red;
+  position: relative;
+  z-index: 1;
+  top: 45px;
+}
+
+.slicknav_nav .slicknav_row:hover {
+  background: $mint;
+  color: $gray;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  .slicknav_nav & {
+    margin: 0;
+    padding: 0;
+    .slicknav_txtnode {
+      margin-left: 0;
+    }
+    .slicknav_parent {
+      margin: 0;
+      padding: 0;
+    }
+    .nav__item--add {
+      width: 100%;
+      background: inherit;
+    }
+    svg {
+      display: none;
+    }
+    span {
+      font-size: 1em;
+      position: relative;
+    }
+    .nav__photo {
+      display: none;
+    }
+    .subnav__list {
+      position: initial;
+      background: none;
+      color: $white;
+      margin: 0;
+      padding: 0;
+      &:before {
+        display:none;
+      }
+      li {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+.nav__item {
+  position: relative;
+  list-style: none;
+  color: $white;
+  fill: $white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1em;
+  &--add {
+    align-self: center;
+  }
+  & > svg {
+    width: 33%;
+  }
+  & > span {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  .button {
+    position: relative;
+    background: $red;
+    padding: 1em;
+    margin: 0 auto;
+    width: 70%;
+    @media (max-width: $slicknav) {
+      background: inherit;
+      padding: inherit;
+    }
+  }
+}
+
+.nav__photo {
+  display: block;
+  width: 33%;
+  border-radius: 50%;
+  margin: 0 auto 1em;
+}
+
+.subnav__list {
+  position: absolute;
+  background-color: $white;
+  color: $gray;
+  fill: $gray;
+  box-shadow: 3px 3px 6px rgba($gray, 0.6);
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-sizing: content-box;
+  padding: 1em;
+  left: 0.5em;
+  top: 5em;
+  &:before {
+  	content: '';
+  	border-left: 1em solid transparent;
+  	border-right: 1em solid transparent;
+  	border-bottom: 1em solid $white;
+  	position: absolute;
+  	top: -16px;
+  	left:38%;
+  	margin: 0 auto;
+  }
+  .nav__item--add & {
+    top: 4.5em;
+    margin: 0 -1em;
+  }
+}
+
+.subnav__item {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  & > svg {
+    width: 100%;
+    flex-basis: 1.6em;
+    margin-right: 1em;
   }
 }

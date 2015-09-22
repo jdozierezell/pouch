@@ -1,0 +1,46 @@
+.card {
+  box-sizing: border-box;
+  box-shadow: 3px 3px 6px rgba($gray, 0.6);
+  flex-basis: 200px;
+  margin: 1.5em 1em;
+}
+
+.card__preview {
+  position: relative;
+  background-color: $sea;
+  color: $gray;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: 100%;
+  }
+  & > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  & > img {
+    width: 100%;
+  }
+  img {
+    display: block;
+  }
+  p {
+    padding: 1em;
+    img {
+      width: 16px;
+      padding-bottom: 0.5em;
+    }
+  }
+}
+
+.card__description {
+  background-color: $gray;
+  color: $white;
+  height: 4em;
+  margin: 0;
+  padding: 1em;
+}

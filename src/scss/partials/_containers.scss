@@ -1,0 +1,22 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1em;
+  &--dashboard-nav {
+    background-color: $gray;
+    max-width: 100%;
+    padding-top: 0;
+    @media (max-width: $slicknav) {
+      position: relative;
+      top: -45px;
+    }
+  }
+  &--cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    z-index: -1;
+  }
+}
