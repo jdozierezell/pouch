@@ -41,6 +41,7 @@
     size: 1.3rem;
     weight: bold;
   }
+  transition: background-color 0.2s ease-in-out;
   &--pricing {
     display: block;
     margin-bottom: 1rem;
@@ -54,5 +55,8 @@
         weight: normal;
       }
     }
+  }
+  &:hover {
+    background-color: darken($red, 15%);
   }
 }

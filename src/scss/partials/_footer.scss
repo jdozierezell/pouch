@@ -48,6 +48,10 @@
     color: $white;
     font-family: "ff-tisa-web-pro", sans-serif;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: $mint;
+    }
   }
 }
 

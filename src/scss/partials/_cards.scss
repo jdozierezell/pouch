@@ -1,14 +1,22 @@
 .card {
   box-sizing: border-box;
   box-shadow: 3px 3px 6px rgba($gray, 0.6);
-  flex-basis: 200px;
-  margin: 1.5em 1em;
+  flex-basis: 94%;
+  margin: 1em 3%;
+  @media (min-width: 375px) {
+    flex-basis: 44%;
+  }
+  @media (min-width: 500px) {
+    flex-basis: 200px;
+    margin: 1.5em 1em;
+  }
 }
 
 .card__preview {
   position: relative;
   background-color: $sea;
   color: $gray;
+  overflow: hidden;
   &:before {
     display: block;
     content: '';
@@ -43,4 +51,5 @@
   height: 4em;
   margin: 0;
   padding: 1em;
+  overflow: hidden;
 }

@@ -61,7 +61,6 @@
   @media (max-width: $slicknav) {
     display: block;
     margin: 0 auto;
-    min-width: 33%;
   }
 }
 
@@ -88,6 +87,7 @@
   width: 44%;
   overflow: hidden;
   margin: 0 0.4rem;
+  transition: background-color 0.2s ease-in-out;
   a {
     display: block;
     width: 100%;
@@ -96,6 +96,9 @@
     text-decoration: none;
     padding: 0.25rem;
     border: 1px solid $white;
+  }
+  &:hover {
+    background-color: darken($red, 15%);
   }
   @media (min-width: 500px) {
     width: auto;
