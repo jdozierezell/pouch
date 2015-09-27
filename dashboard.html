@@ -13,6 +13,55 @@
 </head>
 <body>
   <header class="container container--dashboard-nav">
+      <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item">
+            <span class="mobile-button">Show</span>
+            <ul class="mobile-subnav__list">
+              <li class="mobile-subnav__item mobile-nav__item--active">
+                <span>All Items</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Notes</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Images</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Links</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Pouches</span>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-nav__item mobile-nav__item--add nav__parent">
+            <span class="mobile-button">Add</span>
+            <ul class="mobile-subnav__list">
+              <li class="mobile-subnav__item">
+                <span>Note</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Image</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Link</span>
+              </li>
+              <li class="mobile-subnav__item">
+                <span>Pouch</span>
+              </li>
+            </ul>
+          </li>
+          <li class="mobile-nav__item nav__parent">
+            <span class="mobile-button">Account</span>
+            <ul class="mobile-subnav__list">
+              <li class="mobile-subnav__item">Settings</li>
+              <li class="mobile-subnav__item">Collaborators</li>
+              <li class="mobile-subnav__item">Log Out</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     <div class="header header--dashboard">
       <svg class="header__logo" viewBox="0 0 792 612">
     <g id="XMLID_3_">
@@ -46,9 +95,9 @@
     	c-5.3,0.7-15.3,4.1-20.5,5.5c-8.1,2.1-24.3,6.7-32.6,8.1c-11.7,2-35.5,4.9-47.4,4.9c-10.7,0-32.3-2-42.7-4.5
     	c-9.5-2.3-27.8-9.2-36.1-14c-6.9-3.9-19.4-13.7-24.4-19.7c-2.5-3-6-10.2-7.4-13.8C27.9,181.9,23,171.8,26,173z"/>
   </svg>
-      <nav id="nav" class="nav">
+      <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item">
+          <li class="nav__item nav__item--active">
             <svg viewBox="0 0 512 512">
               <g>
               	<path d="M394.6,341.2c-29.5,0-53.4,23.9-53.4,53.4s23.9,53.4,53.4,53.4c29.5,0,53.4-23.9,53.4-53.4S424.1,341.2,394.6,341.2z"/>
@@ -121,13 +170,13 @@
                   	<path d="M329.6,208c-12.1-28.3-40.1-48-73.1-48h-112c-44.2,0-80.5,35.3-80.5,79.5v32c0,44.2,36.3,80.5,80.5,80.5H192   c0,0-25.8-17-32.1-48h-15.4c-17.6,0-32.5-14.9-32.5-32.5v-32c0-17.6,14.9-31.5,32.5-31.5H256h0.5c17.6,0,31.5,13.9,31.5,31.5v32   c0,0.2,0,0.3,0,0.5h48c0-0.2,0-0.3,0-0.5v-32C336,228.3,333.7,217.6,329.6,208z"/>
                   </g>
                 </svg>
-                <span>Links</span>
+                <span>Link</span>
               </li>
               <li class="subnav__item">
                 <svg viewBox="0 0 512 512">
                   <path d="M448,160h-64v-4.5C384,87,329,32,260.5,32h-8C184,32,128,87,128,155.5v4.5H64L32,480h448L448,160z M160,155.5  c0-50.7,41.8-91.5,92.5-91.5h7.5h0.5c50.7,0,91.5,40.8,91.5,91.5v4.5H160V155.5z M67.8,448l24.9-256H128v36.3  c-9.6,5.5-16,15.9-16,27.7c0,17.7,14.3,32,32,32s32-14.3,32-32c0-11.8-6.4-22.2-16-27.7V192h192v36.3c-9.6,5.5-16,15.9-16,27.7  c0,17.7,14.3,32,32,32s32-14.3,32-32c0-11.8-6.4-22.2-16-27.7V192h35.4l24.9,256H67.8z"/>
                 </svg>
-                <span>Pouches</span>
+                <span>Pouch</span>
               </li>
             </ul>
           </li>
@@ -249,11 +298,10 @@
   	</div>
   </footer>
   <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="vendor/slicknav/jquery.slicknav.js"></script>
   <script type="text/javascript" src="vendor/dropit/dropit.js"></script>
   <script>
     $(function(){
-      $('#nav').slicknav();
+      $('.mobile-nav__list').dropit({ action: 'click', triggerEl: 'span' });
       $('.nav__list').dropit({ action: 'mouseenter', triggerEl: 'span' });
     });
   </script>

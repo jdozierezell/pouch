@@ -6,10 +6,6 @@
     background-color: $gray;
     max-width: 100%;
     padding-top: 0;
-    @media (max-width: $slicknav) {
-      position: relative;
-      top: -45px;
-    }
   }
   &--cards {
     display: flex;

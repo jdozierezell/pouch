@@ -39,7 +39,7 @@
   margin: 0 auto 2rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   @media (min-width: 500px) {
     justify-content: space-between;
@@ -48,7 +48,7 @@
 
 .header__logo {
   fill: $white;
-  display: block;
+  display: none;
   min-width: 14rem;
   padding-left: 0;
   @include columns(2);
@@ -58,7 +58,7 @@
   @media (min-width: 1224px) {
     padding-left: 0;
   }
-  @media (max-width: $slicknav) {
+  @media (min-width: $slicknav) {
     display: block;
     margin: 0 auto;
   }
@@ -112,72 +112,11 @@
   }
 }
 
-.slicknav_menu {
-    display: none;
-    background: $gray;
-    @media (max-width: $slicknav) {
-      display: block;
-      position: relative;
-      top: -35px;
-    }
-}
-
-.slicknav_btn {
-  background: $red;
-  position: relative;
-  z-index: 1;
-  top: 45px;
-}
-
-.slicknav_nav .slicknav_row:hover {
-  background: $mint;
-  color: $gray;
-}
-
 .nav__list {
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   margin: 0;
-  padding: 0;
-  .slicknav_nav & {
-    margin: 0;
-    padding: 0;
-    .slicknav_txtnode {
-      margin-left: 0;
-    }
-    .slicknav_parent {
-      margin: 0;
-      padding: 0;
-    }
-    .nav__item--add {
-      width: 100%;
-      background: inherit;
-    }
-    svg {
-      display: none;
-    }
-    span {
-      font-size: 1em;
-      position: relative;
-    }
-    .nav__photo {
-      display: none;
-    }
-    .subnav__list {
-      position: initial;
-      background: none;
-      color: $white;
-      margin: 0;
-      padding: 0;
-      &:before {
-        display:none;
-      }
-      li {
-        margin-bottom: 0.5em;
-      }
-    }
-  }
 }
 
 .nav__item {
@@ -190,9 +129,16 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  padding-bottom: 1em;
+  padding: 3em 0;
+  height: 9em;
   &--add {
     align-self: center;
+    top: 2em;
+  }
+  &--active {
+    background-color: $mint;
+    color: $gray;
+    fill: $gray;
   }
   & > svg {
     width: 33%;
@@ -201,7 +147,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 1.5em;
   }
   .button {
     position: relative;
@@ -209,10 +155,6 @@
     padding: 1em;
     margin: 0 auto;
     width: 70%;
-    @media (max-width: $slicknav) {
-      background: inherit;
-      padding: inherit;
-    }
   }
 }
 
@@ -236,8 +178,8 @@
   align-items: center;
   box-sizing: content-box;
   padding: 1em;
-  left: 0.5em;
-  top: 5em;
+  left: 0.3em;
+  top: 8.5em;
   &:before {
   	content: '';
   	border-left: 1em solid transparent;
@@ -249,7 +191,7 @@
   	margin: 0 auto;
   }
   .nav__item--add & {
-    top: 4.5em;
+    top: 5.5em;
     margin: 0 -1em;
   }
 }
@@ -265,4 +207,91 @@
     flex-basis: 1.6em;
     margin-right: 1em;
   }
+}
+
+.mobile-nav {
+  display: block;
+  @media (min-width: $slicknav) {
+    display: none;
+  }
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.mobile-nav__item {
+  list-style: none;
+  color: $white;
+  background-color: $red;
+  border-right: 1px solid $white;
+  flex-basis: 33.3%;
+  text-align: center;
+  font-size: 1.2em;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: darken($red, 15%);
+  }
+  &:last-of-type {
+    border-right: 0;
+  }
+}
+
+.mobile-subnav__list {
+   position: absolute;
+   left: 0;
+   background: $white;
+   width: 100vw;
+   color: $gray;
+   padding: 1em 0;
+   text-align: left;
+   box-shadow: 0 3px 3px rgba($gray, 0.6);
+  .mobile-nav__item:nth-of-type(1) & {
+    left: 0;
+  }
+  .mobile-nav__item:nth-of-type(2) & {
+    left: -33vw;
+  }
+  .mobile-nav__item:nth-of-type(3) & {
+    left: -67vw;
+  }
+  &:before {
+  	content: '';
+  	border-left: 1em solid transparent;
+  	border-right: 1em solid transparent;
+  	border-bottom: 1em solid $white;
+  	position: absolute;
+  	top: -0.6em;
+  	margin: 0 0 0 -1em;
+  	.mobile-nav__item:nth-of-type(1) & {
+  	  left: 16.5%;
+  	}
+  	.mobile-nav__item:nth-of-type(2) & {
+  	  left: 50%;
+  	}
+  	.mobile-nav__item:nth-of-type(3) & {
+  	  left: 83.5%;
+  	}
+  }
+}
+
+.mobile-subnav__item {
+  list-style: none;
+  padding: 0.5em 1em;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: $gray;
+    color: $white;
+  }
+}
+
+.mobile-button {
+  display: inline-block;
+  padding: 2em 0;
+  width: 100%;
 }
